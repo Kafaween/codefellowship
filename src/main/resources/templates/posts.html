@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Page</title>
+</head>
+<body>
+<form method="POST" th:action="@{/posts}">
+    <h3>Add new post</h3>
+    <div><label for="body">body : <input id="body" name="body" type="text"></label></div>
+    <div><input type="submit" value="Submit"/></div>
+</form>
+</body>
+</html>
