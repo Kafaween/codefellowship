@@ -67,14 +67,14 @@ public class Usercontroller {
         return "posts";
     }
     @PostMapping ("/posts")
-    public String Addposts(@ModelAttribute Post post){
+    public RedirectView Addposts(@ModelAttribute Post post){
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         ApplicationUser user=userRepository.findApplicationUserByUsername(userDetails.getUsername());
         post.setUser(user);
         postRepository.save(post);
         user.setPosts(post);
         userRepository.save(user);
-        return "index2";
+        return new RedirectView("/profile");
     }
     @GetMapping("/home")
     public String gethome(){
