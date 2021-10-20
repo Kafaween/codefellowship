@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org" lang="en">
+
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/home.css" />
+</head>
+<body>
+
+<div id='move'>
+    <div id='cercle'><p>HELLO</p></div>
+    <div id='Bienvenue'><h1>Welcome to Codefellowship</h1>
+        <h3><a th:href="@{/login}">Enter</a></h3></div>
+</div>
+<section id='barrereseaux'>
+    <a id='a1' th:href="@{/login}">Login</a>
+    <a id='a2' th:href="@{/signup}">Signup</a>
+
+</section>
+
+
+
+</body>
+</html>

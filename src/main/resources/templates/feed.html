@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <style>
+        .nav-link{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-header">
+            <a style="color:white" class="navbar-brand" href="/home">Code Fellowship </a>
+        </div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a style="color:white" class="nav-link" href="/home">Home</a></li>
+            <li class="nav-item active"><a style="color:white" class="nav-link" th:href="@{/profile}" >Profile</a></li>
+        </ul>
+
+    </div>
+</nav>
+<br>
+<br>
+<div style="display:flex; align-content: center ; left: auto "  >
+    <div th:each="user:${following}">
+        <div th:each="post : ${user.posts}"  class="card text-white bg-danger  mb-3" style="max-width: 50rem;margin-left:10px">
+            <div class="card-header" style="max-width: 50rem; font-size:20px">Post form:<span th:text="${user.username}"></span></div>
+            <div class="card-body" >
+                <p style="padding:50px; margin-top:20px" class="card-text" th:text="${post.getBody()}"></p>
+                <p style="padding:50px; margin-top:20px" class="card-text" th:text="${post.getCreatedAt()}"></p>
+                <button class="btn btn-danger"><a class="nav-link" th:href="'/profile/'+${user.id}">Go To Profile</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

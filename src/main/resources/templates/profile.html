@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <style>
+        .nav-link{
+            color:white;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-header">
+            <a style="color:white" class="navbar-brand" href="/home">Code Fellowship </a>
+        </div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a style="color:white" class="nav-link" href="/home">Home</a></li>
+            <li class="nav-item active"><a style="color:white" class="nav-link" th:href="@{/profile}" >Profile</a></li>
+        </ul>
+
+    </div>
+</nav>
+<br>
+<br>
+
+<h2>Welcome to <span th:text="${userdata.username}"></span> 's profile</h2>
+
+<form th:action="@{/posts}" method="get">
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p th:text="${userdata.firstName}" class="card-text"></p>
+        <p th:text="${userdata.lastName}" class="card-text"></p>
+        <p th:text="${userdata.dateOfBirth}" class="card-text"></p>
+        <p th:text="${userdata.bio}" class="card-text"></p>
+        <button type="submit" th:name="action" th:value="in">Add Post</button>
+    </div>
+</div>
+</form>
+<div th:each="post:${userdata.posts}" class="album">
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Post</h5>
+        <h6 th:text="${post.createdAt}" class="card-subtitle mb-2 text-muted"></h6>
+        <p th:text="${post.body}" class="card-text"></p>
+    </div>
+</div>
+</div>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>

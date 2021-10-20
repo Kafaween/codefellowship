@@ -1,0 +1,39 @@
+</html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/signup.css" />
+  <title>CSS Form</title>
+</head>
+
+<body id="body">
+<div class="container">
+  <div th:if="${param.error}">
+    Invalid username and password.
+  </div>
+  <div th:if="${param.logout}">
+    You have been logged out.
+  </div>
+  <form th:action="@{/login}" method="post" class="content">
+    <h1 id="say-hello">Say Hello!</h1>
+    <div>
+      <div class="name">
+        <label for="username">Your Name</label><br />
+        <input class="fld" placeholder="Enter your name" id="username" name="username" type="text" />
+      </div>
+
+      <div class="email">
+        <label for="password">Password</label><br />
+        <input class="fld" placeholder="Enter your Password" id="password" name="password" type="password" />
+      </div>
+
+    </div>
+
+    <button class="btn" type="submit">Submit &#129046;</button>
+  </form>
+</div>
+</body>
+
+</html>

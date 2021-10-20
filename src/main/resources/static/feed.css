@@ -1,0 +1,91 @@
+.blog-posts-home{
+    width:100%;
+    background-color: #e0e0e0;
+    min-height:300px;
+    margin-bottom:10px;
+    padding-bottom:20px;
+    padding-top:5px;
+}
+.blog-posts-home .post-container{
+    float:left;
+    width:24%;
+    margin:8px;
+    background-color:white;
+    -webkit-box-shadow: 2px 2px 1px 0px rgba(202,202,202,0.92);
+    -moz-box-shadow: 2px 2px 1px 0px rgba(202,202,202,0.92);
+    box-shadow: 2px 2px 1px 0px rgba(202,202,202,0.92);
+}
+.blog-posts-home .post-container .blog-image{
+    width:80%;
+}
+.blog-posts-home .post-container .blog-image img{
+    display:block;
+    margin:auto;
+    max-width:90%;
+    padding-top:5px;
+}
+.blog-posts-home .post-container .post{
+    padding-left:15%;
+    padding-right:20%;
+}
+.blog-posts-home .post-container .post .blog-snippet{
+    padding-left:5px;
+}
+.blog-posts-home .post-container .post .read-more-button{
+    display:block;
+    margin-top:80px;
+    margin-bottom:30px;
+}
+.blog-posts-home .post-container .post .read-more-button a{
+    background-color:#333333;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border: 2px solid #262626;
+}
+.blog-posts-home .post-container .post .blog-post-bottom p{
+    font-style:italic;
+    color: #a1a1a1;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix {
+    display: block;
+}
+@media (min-width: 1px) and (max-width: 479px)
+{/* rules for supersmall(1 > 480)*/
+    .blog-posts-home .post-container{
+        width:99% !important;
+    }
+}
+@media (min-width: 480px) and (max-width: 767px)
+{/* rules for mobile(480 > 768)*/
+    .blog-posts-home .post-container{
+        width: 49% !important;
+        margin: 2px !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px)
+{/* rules for tablet (768 > 992) */
+    .blog-posts-home .post-container{
+        width:49% !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px)
+{/* rules for desktop (992 > 1200) */
+    .blog-posts-home .post-container{
+        width:23.5% !important;
+    }
+}
+@media (min-width: 1200px) and (max-width: 4000px)
+{/* rules for large (> 1200) */
+
+}
