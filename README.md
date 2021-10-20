@@ -1,6 +1,6 @@
 # codefellowship
 
-# Lab-16 and Lab-17
+
 
 application end points:
 / : this is the root end point which is available for non logged in users, it has two buttons one for login and one for sign up.
