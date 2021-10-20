@@ -1,14 +1,26 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="https://www.thymeleaf.org" lang="en">
+
 <head>
     <title>Home Page</title>
+    <link rel="stylesheet" href="/home.css" />
 </head>
 <body>
-<h1>Welcome Class to Spring Security</h1>
 
+<div id='move'>
+    <div id='cercle'><p>HELLO </p></div>
+    <div id='Bienvenue'><h1 th:text="'artist:  '+'  '+${userdata.username}"></h1>
+        </div>
+</div>
+<section id='barrereseaux'>
+    <a id='a1' th:href="@{/profile}">Profile</a>
+    <a id='a2' th:href="@{/search}">Search for users</a>
+    <a id='a3' th:href="@{/feed}" method="get">Feed</a>
+    <a id='a4' th:href="@{/logout}" method="post">logout</a>
 
-<p>Click <a th:href="@{/profile}">here</a> profile.</p>
+</section>
 
 
 

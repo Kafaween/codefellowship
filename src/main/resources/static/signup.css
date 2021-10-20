@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    display: table;
+
+    font-family: Rubik, sans-serif;
+}
+
+.container {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    background-image: linear-gradient(90deg, rgb(106, 33, 223), rgb(209, 51, 230));
+}
+
+.content {
+    display: inline-block;
+    text-align: left;
+    background-color: whitesmoke;
+    border-radius: .7em;
+    padding: 3rem 3rem 3rem;
+}
+
+.fld {
+    width: 20em;
+    height: 3rem;
+}
+
+.slt {
+    width: 20.25em;
+    font-weight: bold;
+    height: 3rem;
+    margin-left: -0.3rem;
+}
+
+.slt::placeholder {
+    color: rgb(109, 109, 109);
+}
+
+.fld::placeholder {
+    color: rgba(128, 128, 128, 0.568);
+}
+
+.fld:focus,
+.slt:focus,
+.ta:focus {
+    outline: none;
+    transition: ease 1s;
+    border-bottom-color: black;
+}
+
+.msg,
+.ta {
+    width: 20em;
+    font-family: Rubik, sans-serif;
+    height: 6rem;
+    margin-bottom: 2.5rem;
+    resize: none;
+}
+
+.ta::placeholder {
+    color: rgba(128, 128, 128, 0.568);
+}
+
+#say-hello {
+    text-align: center;
+    font-weight: bold;
+}
+
+.name,
+.services,
+.budget,
+.msg,
+.email {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+}
+
+label {
+    font-size: small;
+    color: gray;
+}
+
+.fld,
+.ta,
+.slt {
+    border: none;
+    background-color: whitesmoke;
+    font-size: large;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.616);
+}
+
+.btn {
+    border: none;
+    font-weight: bold;
+    width: 22.5rem;
+    background-image: linear-gradient(90deg, rgb(209, 51, 230), rgb(106, 33, 223), rgb(9, 204, 204));
+    border-radius: 2rem;
+    height: 2.5rem;
+    color: whitesmoke;
+}
+
+.btn:hover {
+    transition: ease-in 0.5s;
+    border: 4px solid blueviolet;
+}

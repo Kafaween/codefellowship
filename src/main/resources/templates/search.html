@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <style>
+        .nav-link{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-header">
+            <a style="color:white" class="navbar-brand" href="/home">Code Fellowship </a>
+        </div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a style="color:white" class="nav-link" href="/home">Home</a></li>
+            <li class="nav-item active"><a style="color:white" class="nav-link" th:href="@{/profile}" >Profile</a></li>
+        </ul>
+
+    </div>
+</nav>
+<br>
+<br>
+<div style="display:flex; gap:20px">
+
+    <div th:each="pro:${users}" th:if="${pro.username}!=${actual}"  class="card" style="width: 18rem; background-color:gray ;padding:10px;margin:5px" >
+        <img class="card-img-top" src="https://icon-library.com/images/user-icon-image/user-icon-image-22.jpg" alt="Card image cap">
+        <div class="card-body" >
+            <h2 class="card-title">User Name: <span th:text="${pro.username}"></span></h2>
+            <p class="card-text">First name: <span th:text="${pro.firstName}"></span></span></p>
+            <p class="card-text">Last name: <span th:text="${pro.lastName}"></span></span></p>
+            <p class="card-text">Date Of Birth: <span th:text="${pro.dateOfBirth}"></span></p>
+            <p class="card-text">Bio: <span th:text="${pro.bio}"></span></p>
+            <a th:href="'/profile/'+${pro.id}">see profile</a>
+            <br>
+        </div>
+    </div>
+</div>
+</body>
+</html>

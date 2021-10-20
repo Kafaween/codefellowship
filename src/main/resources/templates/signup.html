@@ -1,19 +1,53 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="https://www.thymeleaf.org" lang="en">
+</html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Sign Up Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/signup.css" />
+    <title>CSS Form</title>
 </head>
-<body>
-<form method="POST" th:action="@{/signup}">
-    <div><label for="username">Username : <input id="username" name="username" type="text"></label></div>
-    <div><label for="password">Password : <input id="password" name="password" type="password"></label></div>
-    <div><label for="firstName">firstName : <input id="firstName" name="firstName" type="text"></label></div>
-    <div><label for="lastName">lastName : <input id="lastName" name="lastName" type="text"></label></div>
-    <div><label for="dateOfBirth">dateOfBirth : <input id="dateOfBirth" name="dateOfBirth" type="date"></label></div>
-    <div><label for="bio">bio : <input id="bio" name="bio" type="text"></label></div>
-    <div><input type="submit" value="Submit"/></div>
-</form>
+
+<body id="body">
+<div class="container">
+    <form method="POST" th:action="@{/signup}" class="content">
+        <h1 id="say-hello">Say Hello!</h1>
+        <div>
+            <div class="name">
+                <label for="username">Your Name</label><br />
+                <input class="fld" placeholder="Enter your name" id="username" name="username" type="text" />
+            </div>
+
+            <div class="email">
+                <label for="password">Password</label><br />
+                <input class="fld" placeholder="Enter your Password" id="password" name="password" type="password" />
+            </div>
+
+            <div class="email">
+                <label for="firstName">firstName</label><br />
+                <input class="fld" placeholder="Enter your firstName" id="firstName" name="firstName" type="text" />
+            </div>
+
+            <div class="email">
+                <label for="lastName">lastName</label><br />
+                <input class="fld" placeholder="Enter your lastName" id="lastName" name="lastName" type="text" />
+            </div>
+
+            <div class="email">
+                <label for="dateOfBirth">dateOfBirth</label><br />
+                <input class="fld" placeholder="Enter your dateOfBirth" id="dateOfBirth" name="dateOfBirth" type="date" />
+            </div>
+
+        </div>
+
+        <div class="msg">
+            <label for="bio">bio</label><br />
+            <textarea class="ta" id="bio" name="bio" type="text" cols="30"
+            rows=" 10" placeholder="Your message here..."></textarea>
+        </div>
+        <button class="btn" type="submit">Submit &#129046;</button>
+    </form>
+</div>
 </body>
+
 </html>
